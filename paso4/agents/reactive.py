@@ -21,11 +21,15 @@ async def main():
         tools = await load_mcp_tools(session)
         agent = create_react_agent(model, tools)
         
+        now = datetime.now()
+        fecha_actual = now.strftime("%-d de %B de %Y")
+        hora_actual = now.strftime("%H:%M")
+        
         messages = [
           {"role": "system", "content": "Eres un agente que responde preguntas sobre el tiempo."},
           {"role": "system", "content": "Se lo mas escueto posible, respondiendo unicamente con la pregunta del usuario. NO AÑADAS MAS INFORMACIÓN DE LA SOLICITADA, AUNQUE LA TENGAS."},
-          {"role": "system", "content": "Hoy es 1 de junio de 2025."},
-          {"role": "system", "content": "Estas en Las Rozas de Madrid, codigo AEMET 28127."},
+          {"role": "system", "content": f"Hoy es {fecha_actual}, son las {hora_actual}."},
+          {"role": "system", "content": "Estas en Las Rozas de Madrid"},
           {"role": "user", "content": "¿Qué temperatura va a hacer mañana?"}
         ]
 

@@ -32,7 +32,7 @@ async def main():
         {"role": "system", "content": "Eres un agente que responde preguntas sobre el tiempo."},
         {"role": "system", "content": "Se lo mas escueto posible, respondiendo unicamente con la pregunta del usuario. NO AÑADAS MAS INFORMACIÓN DE LA SOLICITADA, AUNQUE LA TENGAS."},
         {"role": "system", "content": f"Hoy es {fecha_actual}, son las {hora_actual}."},
-        {"role": "system", "content": "Estas en Las Rozas de Madrid, codigo AEMET 28127."},
+        {"role": "system", "content": "Estas en Las Rozas de Madrid"},
         {"role": "user", "content": "¿Qué temperatura va a hacer mañana?"}
       ]
 

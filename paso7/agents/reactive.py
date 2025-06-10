@@ -42,7 +42,7 @@ async def main():
     {"role": "system", "content": "Eres un agente que responde preguntas. Tienes acceso a herramientas de calendario y meteorología."},
     {"role": "system", "content": "Se lo mas escueto posible, respondiendo unicamente con la pregunta del usuario. NO AÑADAS MAS INFORMACIÓN DE LA SOLICITADA, AUNQUE LA TENGAS."},
     {"role": "system", "content": f"Hoy es {fecha_actual}, son las {hora_actual}."},
-    {"role": "system", "content": "Estas en Las Rozas de Madrid, codigo AEMET 28127."},
+    {"role": "system", "content": "Estas en Las Rozas de Madrid"},
     {"role": "system", "content": "Si no sabes cuando es un evento, busca en la herramienta de calendario."},
     {"role": "user", "content": "¿Durante la proxima Retro que hay planificada, va a llover?"},
   ]
