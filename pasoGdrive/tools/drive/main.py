@@ -4,7 +4,7 @@ from google import get_travel_time, get_coordinates_from_address, get_address_fr
 mcp = FastMCP("Weather MCP Server")
 
 @mcp.tool()
-def calculate_route(origin: str, destination: str, travel_mode: str = "driving", arrival_time: str = None) -> dict:
+def calculate_route(origin: str = "real, 2, las rozas", destination: str = "via de los poblados 1, madrid", travel_mode: str = "driving", arrival_time: str = None) -> dict:
   """
   Calcula la ruta y duración entre dos puntos usando Google Maps. 
   Parámetros: origin y destination como direcciones.

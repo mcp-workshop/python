@@ -72,7 +72,7 @@ Puedes usar el archivo `.env.example` como plantilla. Si no configuras esta vari
 
 uv run test_ollama.py 
 
-🛠️ **Actividad paso1**: Añadir una función que le pases el código AEMET y devuelva la respuesta de AEMET cruda
+🛠️ **Actividad paso1**: Añadir una función que devuelva la respuesta de open meteo completa
 
 uv run paso1/tools/weather/main.py 
 
@@ -84,7 +84,7 @@ npx @modelcontextprotocol/inspector (uv run paso2/tools/weather/main.py)
 
 uv run paso3/agents/reactive.py
 
-🛠️ **Actividad paso4**: Vamos a hacer una poda a la respuesta de AEMET. ¿Mejoran las respuestas? ¿Y el tiempo de ejecución?
+🛠️ **Actividad paso4**: Vamos a hacer una poda a la respuesta de open meteo. ¿Mejoran las respuestas? ¿Y el tiempo de ejecución?
 
 uv run paso4/agents/reactive.py
 
@@ -112,5 +112,4 @@ uv run paso7/agents/reactive.py
 docker compose up -d
 cp pasoGdrive/tools/calendar/.env.example pasoGdrive/tools/calendar/.env
 cp pasoGdrive/agents/.env.example pasoGdrive/agents/.env
-cp pasoGdrive/tools/calendar/.env.example pasoGdrive/tools/calendar/.env
 uv run pasoGdrive/agents/reactive.py
