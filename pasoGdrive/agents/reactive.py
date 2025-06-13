@@ -3,12 +3,8 @@ from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
 from datetime import datetime
 from langfuse.langchain import CallbackHandler
-from dotenv import load_dotenv
-import uuid
 import os
 import asyncio
-
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 handler: CallbackHandler = CallbackHandler()
 
@@ -18,18 +14,18 @@ async def main():
   client = MultiServerMCPClient(
     {
       "weather": {
-        "command": "uv",
-        "args": ["run", "python", os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
+        "command": "python",
+        "args": [os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
         "transport": "stdio",
       },
       "calendar": {
-        "command": "uv",
-        "args": ["run", "python", os.path.join(os.path.dirname(__file__), "../tools/calendar/main.py")],
+        "command": "python",
+        "args": [os.path.join(os.path.dirname(__file__), "../tools/calendar/main.py")],
         "transport": "stdio",
       },
       "drive": {
-        "command": "uv",
-        "args": ["run", "python", os.path.join(os.path.dirname(__file__), "../tools/drive/main.py")],
+        "command": "python",
+        "args": [os.path.join(os.path.dirname(__file__), "../tools/drive/main.py")],
         "transport": "stdio",
       },
     }

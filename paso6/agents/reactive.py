@@ -12,8 +12,8 @@ async def main():
   client = MultiServerMCPClient(
     {
       "weather": {
-        "command": "uv",
-        "args": ["run", "python", os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
+        "command": "python",
+        "args": [os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
         "transport": "stdio",
       },
       "calendar": {

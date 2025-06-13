@@ -1,0 +1,40 @@
+{
+  "name": "devcontainer1",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22",
+      "nodeGypDependencies": true
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.13",
+      "installTools": true
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/prulloac/devcontainer-features/ollama:1": {}
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=devcontainer-bashhistory,target=/commandhistory,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {
+        "editor.tabSize": 2
+      }
+    }
+  },
+  "containerEnv": {
+    "OLLAMA_HOST": "http://host.docker.internal:11434",
+    "CALENDAR_URL": "https://calendar.google.com/calendar/ical/0f7e8a7191ceda59262822a5fbed28f9dedae882137d0af94eddbbbdae292bd4%40group.calendar.google.com/public/basic.ics",
+    "LANGFUSE_PUBLIC_KEY": "pk-lf-f94c5ac3-cc48-4591-ab59-2274db959cd6",
+    "LANGFUSE_SECRET_KEY": "sk-lf-aa201e1e-2c38-4451-8951-9b9279763dc7",
+    "LANGFUSE_HOST": "http://localhost:3000",
+    "GOOGLE_MAPS_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "runArgs": ["--network=host",  "--add-host=host.docker.internal:host-gateway"],
+  "forwardPorts": [11434, 3000],
+  "postCreateCommand": "pip install ."
+}

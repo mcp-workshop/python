@@ -1,8 +1,6 @@
 import googlemaps
-from dotenv import load_dotenv
 import os
 
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 api_key = os.getenv("GOOGLE_MAPS_API_KEY")
 
 def get_travel_time(origin: str, destination: str, travel_mode: str = "driving", arrival_time: str = None) -> dict:

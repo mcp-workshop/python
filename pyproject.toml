@@ -3,16 +3,16 @@ name = "taller-agentes-mcp"
 version = "0.1.0"
 description = "Taller de agentes y herramientas usando MCP, LangGraph y LangChain"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 dependencies = [
-    "mcp",
-    "langgraph",
-    "langchain",
-    "langchain-ollama",
-    "icalendar",
-    "requests",
-    "langchain-mcp-adapters",
-    "langfuse",
-    "googlemaps",
-    "langchain-google-genai"
+  "mcp==1.9.4",
+  "langgraph==0.4.8",
+  "langchain==0.3.25",
+  "langchain-ollama==0.3.3",
+  "icalendar==6.3.1",
+  "requests==2.32.4",
+  "langchain-mcp-adapters==0.1.7",
+  "langfuse==2.60.8",
+  "googlemaps==4.10.0",
+  "langchain-google-genai==2.1.5"
 ]

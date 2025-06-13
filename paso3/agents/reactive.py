@@ -14,8 +14,8 @@ model = ChatOllama(model="qwen2.5")
 async def main():
     
   server_params = StdioServerParameters(
-    command="uv",
-    args=["run", "python", os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
+    command="python",
+    args=[os.path.join(os.path.dirname(__file__), "../tools/weather/main.py")],
   )
   
   async with stdio_client(server_params) as (read, write):
